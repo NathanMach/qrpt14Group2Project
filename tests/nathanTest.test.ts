@@ -4,7 +4,9 @@ const fs = require('fs')
 
 test('open account', async () => {
     await page.signIn()
-    await page.driver.quit()
 })
 
-test
+test('add to cart', async () => {
+    await page.addToCart()
+    await page.driver.quit()
+})
