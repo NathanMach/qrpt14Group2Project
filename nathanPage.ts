@@ -26,23 +26,31 @@ export class starCitizen extends BasePage {
         await this.setInput(this.password, 'Spartan852')
         await this.driver.sleep(1000)
         await this.click(this.signUp)
-        await this.driver.sleep(12000)
-    }
+        await this.driver.sleep(17000)
+        await fs.writeFile(`${__dirname}/login.png`,
+        await this.driver.takeScreenshot(),"base64",
+            (e) => {
+        if (e) console.error(e)
+        else console.log('Got it!')
+    });
+    };
 
     async addToCart(){
         await this.driver.manage().window().maximize()
         await this.navigate()
-        await this.driver.sleep(1000)
+        await this.driver.sleep(2000)
         await this.click(this.check)
         await this.click(this.buyGame)
-        await this.driver.sleep(1000)
-        await this.click(this.signUp)
         await this.driver.sleep(2000)
+        await this.click(this.signUp)
+        await this.driver.sleep(3000)
+        
         await fs.writeFile(`${__dirname}/addCart.png`,
         await this.driver.takeScreenshot(),"base64",
-    (e) => {
-        if (e) console.error(e)
-        else console.log('Got it!')
-    });
-    }
-}
+            (e) => {
+            if (e) console.error(e)
+            else console.log('Got it!')
+            });
+    await this.driver.quit()
+    };
+};
