@@ -10,3 +10,8 @@ test('add to cart', async () => {
     await page.addToCart()
     await page.driver.quit()
 });
+
+test('Account Icon', async () => {
+    await page.Icon()
+    await page.driver.quit()
+})

@@ -53,4 +53,7 @@ export class starCitizen extends BasePage {
             });
     await this.driver.quit()
     };
+    async Icon(){
+        
+    }
 };
