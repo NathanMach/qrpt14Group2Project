@@ -9,4 +9,4 @@ test('open account', async () => {
 test('add to cart', async () => {
     await page.addToCart()
     await page.driver.quit()
-})
+});
