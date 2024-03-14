@@ -1,4 +1,4 @@
-import {Builder, By, Capabilities, until, WebDriver, WebElement} from "selenium-webdriver";
+import {Builder, By, Capabilities, until, WebDriver, WebElement, Actions} from "selenium-webdriver";
 const chromedriver = require("chromedriver")
 
 interface Options {
@@ -45,4 +45,12 @@ export class BasePage {
     async getAttribute(elementBy: By, attribute: string): Promise<string> {
         return (await this.getElement(elementBy)).getAttribute(attribute)
     }
+    actionWiggle(actions: Actions, originElement: WebElement, moveDurationMS: number = 100): Actions {
+        return actions.move({origin: originElement, duration: moveDurationMS})
+        .move({origin: originElement, x:5, y: 0, duration: moveDurationMS}) 
+        .move({origin: originElement, x: 0, y: 5, duration: moveDurationMS})
+        .move({origin: originElement, x: 5, y: 0, duration: moveDurationMS})
+        .move({origin:originElement, x: 0, y: 5, duration: moveDurationMS})
+        .pause(moveDurationMS); 
+    };
 }

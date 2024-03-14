@@ -6,12 +6,12 @@ test('open account', async () => {
     await page.signIn()
 })
 
-test('add to cart', async () => {
-    await page.addToCart()
+test('Account Icon', async () => {
+    await page.Icon()
+})
+
+test('apps', async () => {
+    await page.community()
     await page.driver.quit()
 });
 
-test('Account Icon', async () => {
-    await page.Icon()
-    await page.driver.quit()
-})
